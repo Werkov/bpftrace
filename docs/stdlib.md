@@ -736,7 +736,7 @@ omitted, the current CPU is used.
 ```
 interval:s:1 {
   $proc_cnt = percpu_kaddr("process_counts");
-  printf("% processes are running on CPU %d\n", *$proc_cnt, cpu);
+  printf("%d processes are running on CPU %d\n", *$proc_cnt, cpu);
 }
 ```
 
