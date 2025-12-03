@@ -13,9 +13,10 @@ int handler(const void *ctx)
 {
 	struct rq *rq;
 
-	rq = (struct rq *)bpf_per_cpu_ptr(&runqueues, 0);
+	// rq = (struct rq *)bpf_per_cpu_ptr(&runqueues, 0);
+	rq = (struct rq *)&runqueues;
 
-	if (rq)
+	// if (rq)
 		out__cpu_0_rq_cpu = rq->cpu;
 
 	return 0;
